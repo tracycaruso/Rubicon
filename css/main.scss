@@ -1,0 +1,233 @@
+// FONTS
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+@font-face{ 
+	font-family: 'Engravers MT Regular'; 
+	src: url('../fonts/engraversmtregular-webfont.eot'); 
+	src: url('../fonts/engraversmtregular-webfont.eot?#iefix') format('embedded-opentype'), 
+	url('../fonts/engraversmtregular-webfont.woff') format('woff'), 
+	url('../fonts/engraversmtregular-webfont.ttf') format('truetype'), 
+	url('../fonts/engraversmtregular-webfont.svg#engraversmtregular-webfont') format('svg'); 
+}
+
+// FUNCTIONS
+@function fluidize($target, $context:1480px){
+	@return($target/$context) * 100%;
+}
+
+@function fluidizeFont($target, $context:16px){
+	@return($target/$context) * 1rem;
+}
+
+
+//	VARIABLES
+
+
+
+$goldLight:#f4eede;
+$goldMed: #b79d36;
+$goldDark: #37341e;
+$serif: 'Engravers MT Regular', Helvetica, Times New Roman, serif;
+$sans-serif: 'Pathway Gothic One', Helvetica, sans-serif;
+
+
+// STRUCTURE
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+main, footer, section{
+	padding: fluidize(70px) 0;
+	box-shadow: inset 1px 1px 10px rgba($goldDark, .15);
+
+}
+
+
+section {
+	width: 90%; 
+	margin:0 auto;
+	padding-left:5%; 
+	padding-right:5%; 
+}
+
+figure{
+	max-height:600px;
+	overflow:hidden;
+}
+
+
+
+img, table, figure, iframe, video, audio, nav {
+	width:100%;
+}
+
+nav{
+	height:138px;
+	position: fixed;
+	background: $goldLight;
+	box-shadow:2px 2px 14px rgba(#000, .45);
+	border: 10px solid;
+	border-top-color: $goldDark;
+	border-bottom-color: $goldMed;
+	z-index:100;
+	
+
+	h1{
+		text-indent:100%;
+		white-space:nowrap;
+		overflow:hidden;
+		display:block;
+		box-shadow:2px 2px 14px rgba($goldMed, .35);
+		margin:0 auto;
+		width:160px;
+		height:160px;
+		border-radius:50%;
+		background:  url("../img/design/rubicon-harrisburg.png") no-repeat center / 160px 160px $goldLight;
+		position:relative;
+		top:-10px;
+		background-size: 160px 160px;
+
+		
+	}
+	a::before{
+			content:'';
+			width:65px;
+			height:20px;
+			background-color:$goldMed;
+			display:block;
+			position:relative;
+			margin:-10px auto 2px;
+		
+
+		}
+
+}
+
+
+main p, footer p{
+	width:fluidize(730px);
+	margin: 0 auto;
+}
+
+section > div{
+	width:fluidize(440px);
+	float:left;
+	display:block;
+	margin:0 fluidize(25px) fluidize(30px, 440px);	
+}
+
+// BACKGROUNDS
+
+
+main, section:last-of-type, 
+section:first-of-type, footer
+	{
+	background:url(../img/design/bg-white.png) top right; 
+	background-attachment: fixed;
+}
+
+section:first-of-type, footer{
+	background-image:url(../img/design/bg-gold.png);
+}
+
+
+ 
+
+// FONTS
+html{
+	font-size:16px;
+	font-family: 'Times New Roman', serif;
+	line-height:1;
+	}
+
+main, footer, %headings{
+	text-align:center;
+	}
+
+%headings{
+	text-transform: uppercase;
+}	
+
+h1{
+	@extend %headings;
+	font-family: $serif;
+	font-size: fluidizeFont(30px);
+	&:after{
+		content:url(../img/design/scroll.png);
+		display:block;
+		margin-top: fluidizeFont(5px);
+	}
+}
+
+h2{
+	@extend %headings;
+	font-size: fluidizeFont(20px);
+	font-family: $sans-serif;
+	&:before{
+		content:"";
+		width:100%;
+		border-top:2px solid $goldMed;
+		display: inline-block;
+		top: 22px;
+		position: relative;
+	}
+	span{
+		background:url(../img/design/bg-gold.png);
+		position:relative;
+		top: 0em;
+		margin:0 auto;
+		padding:5px;
+		}
+
+	&:only-of-type span{
+		background:url(../img/design/bg-white.png);
+	}
+}
+
+h3{
+	@extend %headings;
+	font-family: $serif;
+	text-align:left;
+}
+
+
+@media only screen 
+and (max-width : 1440px) {
+nav {
+    height: 74px;
+    border-width:6px 0;
+    	h1{
+    		background-size:110px 110px;
+    		border-radius: 50%;
+    		height: 110px;
+    		width: 109px;
+	}
+	& a:before {
+		width:43px;
+		margin: -6px auto 0px;
+	}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
