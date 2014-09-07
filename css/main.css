@@ -1,8 +1,24 @@
-@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
 @font-face {
   font-family: 'Engravers MT Regular';
   src: url("../fonts/engraversmtregular-webfont.eot");
   src: url("../fonts/engraversmtregular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/engraversmtregular-webfont.woff") format("woff"), url("../fonts/engraversmtregular-webfont.ttf") format("truetype"), url("../fonts/engraversmtregular-webfont.svg#engraversmtregular-webfont") format("svg"); }
+@font-face {
+  font-family: 'Heroic Condensed';
+  src: url("../fonts/heroiccondensed-regular-webfont.eot");
+  src: url("../fonts/heroiccondensed-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/heroiccondensed-regular-webfont.woff") format("woff"), url("../fonts/heroiccondensed-regular-webfont.ttf") format("truetype"), url("../fonts/heroiccondensed-regular-webfont.svg#heroiccondensed-webfont") format("svg"); }
+@font-face {
+  font-family: 'Sorte Faxs';
+  src: url("../fonts/sortefaxs02_0261-webfont.eot");
+  src: url("../fonts/sortefaxs02_0261-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sortefaxs02_0261-webfont.woff") format("woff"), url("../fonts/sortefaxs02_0261-webfont.ttf") format("truetype"), url("../fonts/sortefaxs02_0261-webfont.svg#heroiccondensed-webfont") format("svg"); }
+nav.top span, h1, h2, h3, h4, h5 {
+  text-transform: uppercase; }
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -mox-box-sizing: border-box; }
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -24,13 +40,18 @@
 /* close commented backslash hack */
 main, footer, section {
   padding: 4.72973% 0;
-  box-shadow: inset 1px 1px 10px rgba(55, 52, 30, 0.15); }
+  box-shadow: inset 1px 1px 10px rgba(55, 52, 30, 0.15);
+  position: relative; }
+
+footer {
+  padding-bottom: 0px; }
 
 section {
-  width: 90%;
   margin: 0 auto;
   padding-left: 5%;
-  padding-right: 5%; }
+  padding-right: 5%;
+  background: url("img/design/left-top-corner.svg");
+  background-position: top left; }
 
 figure {
   max-height: 600px;
@@ -39,37 +60,138 @@ figure {
 img, table, figure, iframe, video, audio, nav {
   width: 100%; }
 
-nav {
+nav.top {
+  font: 1.25rem "Engravers MT Regular", "Times New Roman", serif;
+  font-size: 1.21563rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
   height: 138px;
-  position: fixed;
+  position: absolute;
   background: #f4eede;
   box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.45);
   border: 10px solid;
   border-top-color: #37341e;
   border-bottom-color: #b79d36;
   z-index: 100; }
-  nav h1 {
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    display: block;
-    box-shadow: 2px 2px 14px rgba(183, 157, 54, 0.35);
+  nav.top span {
+    font: 1.5625rem "Heroic Condensed", Helvetica, sans-serif;
+    display: block; }
+  nav.top a {
+    color: #37341e; }
+  nav.top ul {
+    list-style: none;
+    text-align: center;
+    margin-top: -30px; }
+    nav.top ul li {
+      border-right: 1px solid black;
+      display: inline-block;
+      height: 55px;
+      padding: 3px 20px;
+      vertical-align: middle; }
+      nav.top ul li:nth-child(1), nav.top ul li:nth-child(7) {
+        padding-top: 10px; }
+      nav.top ul li:nth-child(2)::before, nav.top ul li:nth-child(2)::after {
+        content: url("../img/design/left-wing.svg");
+        display: block;
+        left: -11px;
+        margin-top: -41px;
+        position: relative;
+        top: 36px;
+        width: 73px; }
+      nav.top ul li:nth-child(2)::after {
+        content: url("../img/design/right-wing.svg");
+        left: 128px;
+        top: -13px; }
+      nav.top ul li:nth-child(3) span, nav.top ul li:nth-child(5) span {
+        border-top: 1px solid;
+        min-width: 85px; }
+      nav.top ul li:nth-child(3)::before, nav.top ul li:nth-child(3)::after {
+        content: url("../img/design/left-tilda.svg");
+        display: block;
+        left: -4px;
+        margin-top: -26px;
+        position: relative;
+        top: 20px;
+        width: 17px; }
+      nav.top ul li:nth-child(3)::after {
+        content: url("../img/design/right-tilda.svg");
+        left: 71px;
+        top: -30px; }
+      nav.top ul li:nth-child(4) {
+        width: 145px;
+        height: 145px;
+        border-radius: 50%;
+        background: url("../img/design/rubicon-harrisburg.svg") no-repeat center/145px 145px #f4eede;
+        background-size: 145px 145px;
+        margin: 0 20px 0;
+        position: relative;
+        top: 34px; }
+        nav.top ul li:nth-child(4):after {
+          background: #b79d36;
+          content: "";
+          display: block;
+          height: 33px;
+          left: 26px;
+          position: relative;
+          top: -170px;
+          width: 50px;
+          z-index: -1; }
+        nav.top ul li:nth-child(4) a {
+          display: inline-block;
+          height: 145px;
+          left: -19px;
+          position: relative;
+          top: 0;
+          width: 145px; }
+      nav.top ul li:nth-child(5) {
+        border-left: 1px solid; }
+      nav.top ul li:nth-child(4), nav.top ul li:nth-child(7) {
+        border-right: none; }
+      nav.top ul li:nth-child(6)::before, nav.top ul li:nth-child(6)::after {
+        content: url("../img/design/left-scroll.svg");
+        display: block;
+        left: -9px;
+        margin-top: -34px;
+        position: relative;
+        top: 55px;
+        width: 32px; }
+      nav.top ul li:nth-child(6)::after {
+        content: url("../img/design/right-scroll.svg");
+        left: 102px;
+        top: 4px; }
+      nav.top ul li:nth-child(7)::after {
+        content: url("../img/design/dots.svg");
+        display: block;
+        left: 12px;
+        margin-top: 0;
+        position: relative;
+        top: -6px;
+        width: 50px; }
+
+/* Second Nav */
+nav.hidden {
+  font: 1.25rem "Engravers MT Regular", "Times New Roman", serif;
+  font-size: 0.59375rem;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 30px;
+  opacity: 0;
+  z-index: 1000;
+  padding: 10px 0px 0px; }
+  nav.hidden ul {
+    list-style: none;
     margin: 0 auto;
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    background: url("../img/design/rubicon-harrisburg.png") no-repeat center/160px 160px #f4eede;
-    position: relative;
-    top: -10px;
-    background-size: 160px 160px; }
-  nav a::before {
-    content: '';
-    width: 65px;
-    height: 20px;
-    background-color: #b79d36;
-    display: block;
-    position: relative;
-    margin: -10px auto 2px; }
+    padding: 0;
+    width: 700px; }
+    nav.hidden ul li {
+      display: inline-block;
+      text-align: center;
+      padding: 0 17px; }
+      nav.hidden ul li:last-child {
+        padding-right: 0px; }
+  nav.hidden a {
+    color: #fff; }
 
 main p, footer p {
   width: 49.32432%;
@@ -79,12 +201,27 @@ section > div {
   width: 29.72973%;
   float: left;
   display: block;
-  margin: 0 1.68919% 6.81818%; }
+  margin: 1.68919%;
+  text-align: center; }
+
+.half {
+  width: 44.59459%;
+  margin: 2.53378%; }
+
+h2 + div.half:after, h4 + div.half:after {
+  background-image: url("../img/design/horizontal-border.png");
+  content: "";
+  display: block;
+  height: 277px;
+  left: 104%;
+  position: relative;
+  top: -290px;
+  width: 30px;
+  margin-bottom: -277px; }
 
 main, section:last-of-type,
 section:first-of-type, footer {
-  background: url(../img/design/bg-white.png) top right;
-  background-attachment: fixed; }
+  background: url(../img/design/bg-white.png) top right fixed; }
 
 section:first-of-type, footer {
   background-image: url(../img/design/bg-gold.png); }
@@ -92,29 +229,29 @@ section:first-of-type, footer {
 html {
   font-size: 16px;
   font-family: 'Times New Roman', serif;
-  line-height: 1; }
+  line-height: 1.3; }
 
-main, footer, h1, h2, h3 {
+main, footer, nav.top span, h1, h2, h3, h4, h5 {
   text-align: center; }
 
-h1, h2, h3 {
-  text-transform: uppercase; }
+a {
+  text-decoration: none; }
 
 h1 {
-  font-family: "Engravers MT Regular", Helvetica, Times New Roman, serif;
-  font-size: 1.875rem; }
+  font: 1.25rem "Engravers MT Regular", "Times New Roman", serif; }
   h1:after {
-    content: url(../img/design/scroll.png);
+    content: url(../img/design/long-scroll.svg);
     display: block;
-    margin-top: 0.3125rem; }
+    margin-top: 0.3125rem;
+    width: 400px;
+    margin: 0 auto; }
 
 h2 {
-  font-size: 1.25rem;
-  font-family: "Pathway Gothic One", Helvetica, sans-serif; }
+  font: 1.875rem "Sorte Faxs", "Times New Roman", serif; }
   h2:before {
     content: "";
     width: 100%;
-    border-top: 2px solid #b79d36;
+    border-top: 1px solid #b79d36;
     display: inline-block;
     top: 22px;
     position: relative; }
@@ -123,23 +260,69 @@ h2 {
     position: relative;
     top: 0em;
     margin: 0 auto;
-    padding: 5px; }
-  h2:only-of-type span {
-    background: url(../img/design/bg-white.png); }
+    padding: 5px;
+    opacity: 1 !important; }
+  #drink h2 span {
+    background: url(../img/design/bg-white.png);
+    opacity: 1 !important; }
 
 h3 {
-  font-family: "Engravers MT Regular", Helvetica, Times New Roman, serif;
-  text-align: left; }
+  font: 1.0625rem "Libre Baskerville", "Times New Roman", serif;
+  margin: 0px;
+  text-transform: capitalize;
+  /*** use js to select first letter of each word ***/
+  /*span{
+  	font-size:1.2em;
+  }*/ }
+  h3 + p {
+    margin: 3px 0px;
+    font: italic 0.875rem "Libre Baskerville", "Times New Roman", serif;
+    line-height: 1.4;
+    letter-spacing: .5px; }
+
+p + span {
+  display: block;
+  font-size: 0.85em;
+  margin-bottom: 20px; }
+
+h4 {
+  font: 1.5625rem "Heroic Condensed", Helvetica, sans-serif;
+  margin-top: -20px; }
+  h4 span {
+    border-top: 2px dotted;
+    display: inline-block;
+    padding-top: 5px;
+    width: 90px; }
+
+h5 {
+  font: 1.5625rem "Heroic Condensed", Helvetica, sans-serif;
+  letter-spacing: 1.5px;
+  margin-top: 10px; }
+
+#eat img:first-of-type {
+  width: 84%;
+  margin: 0 auto; }
+
+#eat div:nth-of-type(3) {
+  border-left: 2px dotted #000; }
+
+#philosophy h1, #philosophy p,
+#eat h1, #eat h2, #eat h2 span, #eat div,
+#drink h1, #drink h2, #drink h2 span, #drink div {
+  opacity: 0; }
+
+h2 span {
+  opacity: 1; }
+
+#trigger, #trigger1, #trigger2, #trigger3, #trigger4 {
+  position: absolute;
+  top: -150px;
+  height: 1px; }
+
+#trigger {
+  top: 250px; }
 
 @media only screen and (max-width: 1440px) {
-  nav {
-    height: 74px;
-    border-width: 6px 0; }
-    nav h1 {
-      background-size: 110px 110px;
-      border-radius: 50%;
-      height: 110px;
-      width: 109px; }
-    nav a:before {
-      width: 43px;
-      margin: -6px auto 0px; } }
+  nav.top {
+    height: 105px;
+    border-width: 8px 0; } }

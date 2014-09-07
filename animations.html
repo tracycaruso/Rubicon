@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rubicon</title>
+	<!-- META TAGS -->
+	<meta charset="UTF8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta http-equiv="cleartype" content="on">
+	
+	<!-- Viewport Fix -->
+	<script src="https://raw.githubusercontent.com/scottjehl/iOS-Orientationchange-Fix/master/ios-orientationchange-fix.js"></script>
+
+
+	<!-- HTML5 & CSS Support -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"</script>
+	<![endif]-->
+
+
+
+
+	<!--<link rel="stylesheet" href="http://basehold.it/14">-->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollmagic.js"></script>
+	
+<style>
+	body{height:3000px;}
+	.trig{
+		background: red;
+		width:10px;
+		height: 10px;
+		position: absolute;
+		top:500px;
+	}
+	#animate{
+		position:fixed;
+		top:0px;
+		width:100%;
+		height:30px;
+		border:1px solid black;
+		opacity:0;
+		
+	}
+</style>
+
+</head>
+<body>
+
+
+<script>
+	var controller;
+	$(document).ready(function($) {
+		// init controller
+		controller = new ScrollMagic();
+	});
+</script>
+
+<div id="animate">
+	<p>You wouldn't like me, when I'm angry!</p>
+
+</div>
+
+
+<div id="trigger" class="trig"></div>
+
+<script>
+	$(document).ready(function($) {
+		// build tween
+		var tween = TweenMax.to("#animate", 0.5, {autoAlpha: 1, backgroundColor: #37341e});
+
+		// build scene
+		var scene = new ScrollScene({triggerElement: "#trigger"})
+						.setTween(tween)
+						.addTo(controller);
+
+	
+	});
+</script>
+
+
+</body>
+</html>

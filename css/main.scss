@@ -1,5 +1,4 @@
 // FONTS
-@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One);
 @font-face{ 
 	font-family: 'Engravers MT Regular'; 
 	src: url('../fonts/engraversmtregular-webfont.eot'); 
@@ -8,6 +7,26 @@
 	url('../fonts/engraversmtregular-webfont.ttf') format('truetype'), 
 	url('../fonts/engraversmtregular-webfont.svg#engraversmtregular-webfont') format('svg'); 
 }
+
+@font-face{ 
+	font-family: 'Heroic Condensed'; 
+	src: url('../fonts/heroiccondensed-regular-webfont.eot'); 
+	src: url('../fonts/heroiccondensed-regular-webfont.eot?#iefix') format('embedded-opentype'), 
+	url('../fonts/heroiccondensed-regular-webfont.woff') format('woff'), 
+	url('../fonts/heroiccondensed-regular-webfont.ttf') format('truetype'), 
+	url('../fonts/heroiccondensed-regular-webfont.svg#heroiccondensed-webfont') format('svg'); 
+}
+
+@font-face{ 
+	font-family: 'Sorte Faxs'; 
+	src: url('../fonts/sortefaxs02_0261-webfont.eot'); 
+	src: url('../fonts/sortefaxs02_0261-webfont.eot?#iefix') format('embedded-opentype'), 
+	url('../fonts/sortefaxs02_0261-webfont.woff') format('woff'), 
+	url('../fonts/sortefaxs02_0261-webfont.ttf') format('truetype'), 
+	url('../fonts/sortefaxs02_0261-webfont.svg#heroiccondensed-webfont') format('svg'); 
+}
+
+@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700);
 
 // FUNCTIONS
 @function fluidize($target, $context:1480px){
@@ -26,11 +45,27 @@
 $goldLight:#f4eede;
 $goldMed: #b79d36;
 $goldDark: #37341e;
-$serif: 'Engravers MT Regular', Helvetica, Times New Roman, serif;
-$sans-serif: 'Pathway Gothic One', Helvetica, sans-serif;
+$serif:fluidizeFont(20px) 'Engravers MT Regular', 'Times New Roman', serif ;
+$serifBold: bold fluidizeFont(20px) 'Libre Baskerville', 'Times New Roman', serif ;
+$serifItalic: italic fluidizeFont(14px) 'Libre Baskerville', 'Times New Roman', serif ;
+$serifDec: fluidizeFont(30px) 'Sorte Faxs', 'Times New Roman', serif ;
+$serifThin: fluidizeFont(17px) 'Libre Baskerville', 'Times New Roman', serif ;
+$sansSerif: fluidizeFont(25px) 'Heroic Condensed',  Helvetica, sans-serif;
+
+
+%headings{
+	text-transform: uppercase;
+}
 
 
 // STRUCTURE
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -mox-box-sizing: border-box
+    }
+
 
 .clearfix:after {
      visibility: hidden;
@@ -46,18 +81,26 @@ $sans-serif: 'Pathway Gothic One', Helvetica, sans-serif;
 .clearfix { display: block; }
 /* close commented backslash hack */
 
+
 main, footer, section{
 	padding: fluidize(70px) 0;
 	box-shadow: inset 1px 1px 10px rgba($goldDark, .15);
+	position:relative;
 
+}
+
+footer{
+	padding-bottom:0px;
 }
 
 
 section {
-	width: 90%; 
 	margin:0 auto;
 	padding-left:5%; 
-	padding-right:5%; 
+	padding-right:5%;
+	background:url('img/design/left-top-corner.svg');
+	background-position:top left; 
+
 }
 
 figure{
@@ -71,47 +114,208 @@ img, table, figure, iframe, video, audio, nav {
 	width:100%;
 }
 
-nav{
+nav.top{
+	font:$serif;
+	font-size:fluidizeFont(19.45px);
+	text-transform:uppercase;
+	letter-spacing:2.5px;
 	height:138px;
-	position: fixed;
+	position: absolute;
 	background: $goldLight;
 	box-shadow:2px 2px 14px rgba(#000, .45);
 	border: 10px solid;
 	border-top-color: $goldDark;
 	border-bottom-color: $goldMed;
 	z-index:100;
+
+
 	
-
-	h1{
-		text-indent:100%;
-		white-space:nowrap;
-		overflow:hidden;
+	span{
+		@extend %headings;
+		font:$sansSerif;
 		display:block;
-		box-shadow:2px 2px 14px rgba($goldMed, .35);
-		margin:0 auto;
-		width:160px;
-		height:160px;
-		border-radius:50%;
-		background:  url("../img/design/rubicon-harrisburg.png") no-repeat center / 160px 160px $goldLight;
-		position:relative;
-		top:-10px;
-		background-size: 160px 160px;
-
-		
 	}
-	a::before{
-			content:'';
-			width:65px;
-			height:20px;
-			background-color:$goldMed;
-			display:block;
-			position:relative;
-			margin:-10px auto 2px;
+	
+	a{
+		color:$goldDark;
 		
+		
+	
+	}
+	
+	ul{
+		list-style:none;
+		text-align:center;
+		margin-top:-30px;
+		li{
+			border-right: 1px solid black;
+    		display: inline-block;
+    		height:55px;
+    		padding: 3px 20px;
+    		vertical-align:middle;
+
+    		&:nth-child(1), &:nth-child(7){
+    			padding-top:10px;
+
+    		}
+
+    		&:nth-child(2)::before, &:nth-child(2)::after{
+			    content: url("../img/design/left-wing.svg");
+			    display: block;
+			    left: -11px;
+			    margin-top: -41px;
+			    position: relative;
+			    top: 36px;
+			    width: 73px;
+
+    		}
+
+    		&:nth-child(2)::after{
+    			  content: url("../img/design/right-wing.svg");
+				   left: 128px;
+    				top: -13px;
+    		}
+
+    		&:nth-child(3) span, &:nth-child(5) span{
+    			border-top:1px solid;
+    			min-width:85px;
+    		}
+
+    		&:nth-child(3)::before, &:nth-child(3)::after{
+    			content: url("../img/design/left-tilda.svg");
+			    display: block;
+			    left: -4px;
+			    margin-top: -26px;
+			    position: relative;
+			    top: 20px;
+			    width: 17px;
+
+    		}
+
+
+    		&:nth-child(3)::after{
+    			  content: url("../img/design/right-tilda.svg");
+				    left: 71px;
+    				top: -30px;
+    		}
+
+    		&:nth-child(4){
+				width:145px;
+				height:145px;
+				border-radius:50%;
+				background: url("../img/design/rubicon-harrisburg.svg") no-repeat center / 145px 145px $goldLight;
+				background-size: 145px 145px;
+				margin:0 20px 0;
+				position: relative;
+ 				top: 34px;
+
+ 				&:after{
+ 					background: $goldMed;
+				    content: "";
+				    display: block;
+				    height: 33px;
+				    left: 26px;
+				    position: relative;
+				    top: -170px;
+				    width: 50px;
+				    z-index: -1;
+ 				}
+ 				a{
+ 					display: inline-block;
+				    height: 145px;
+				    left: -19px;
+				    position: relative;
+				    top: 0;
+				    width: 145px;
+ 				}
+
+    		}
+
+    		&:nth-child(5){
+    			border-left:1px solid;
+    		} 
+			
+			&:nth-child(4), &:nth-child(7){
+				border-right:none;
+			}
+
+
+    		&:nth-child(6)::before, &:nth-child(6)::after{
+			    content: url("../img/design/left-scroll.svg");
+			    display: block;
+			    left: -9px;
+			    margin-top: -34px;
+			    position: relative;
+			    top: 55px;
+			    width: 32px;
+
+    		}
+
+    		&:nth-child(6)::after{
+    			    content: url("../img/design/right-scroll.svg");
+				    left: 102px;
+				    top: 4px;
+    		}
+
+
+
+			&:nth-child(7)::after{
+				content: url("../img/design/dots.svg");
+			    display: block;
+			    left: 12px;
+			    margin-top: 0;
+			    position: relative;
+			    top: -6px;
+			    width: 50px;
+			}
+
+
+
 
 		}
+	}
 
 }
+
+/* Second Nav */
+
+	nav.hidden{
+		font:$serif;
+		font-size:fluidizeFont(9.5px);
+		position:fixed;
+		top:0px;
+		width:100%;
+		height:30px;
+		opacity:0;
+		z-index:1000;
+		padding:10px 0px 0px;
+		ul{
+			list-style:none;
+			margin:0 auto;
+    		padding: 0;
+    		width: 700px;
+
+			li{
+				display:inline-block;
+				text-align:center;
+				padding:0 17px;
+
+				&:last-child{
+				padding-right:0px;
+				}
+
+
+			}
+
+		}
+		a{
+			color:#fff;
+		}
+
+	}
+
+
+
 
 
 main p, footer p{
@@ -123,22 +327,45 @@ section > div{
 	width:fluidize(440px);
 	float:left;
 	display:block;
-	margin:0 fluidize(25px) fluidize(30px, 440px);	
+	margin:fluidize(25px);	
+	text-align:center;
 }
 
+
+
+.half{
+	width:fluidize(660px);
+	margin:fluidize(37.5px);	
+}
+
+h2 + div.half:after, h4 + div.half:after{
+    background-image: url("../img/design/horizontal-border.png");
+    content: "";
+    display: block;
+    height: 277px;
+    left: 104%;
+    position: relative;
+    top: -290px;
+    width: 30px;
+    margin-bottom:-277px;
+}
 // BACKGROUNDS
 
 
 main, section:last-of-type, 
 section:first-of-type, footer
 	{
-	background:url(../img/design/bg-white.png) top right; 
-	background-attachment: fixed;
+	background:
+	url(../img/design/bg-white.png) top right fixed;
+
+
 }
 
 section:first-of-type, footer{
 	background-image:url(../img/design/bg-gold.png);
 }
+
+
 
 
  
@@ -147,36 +374,36 @@ section:first-of-type, footer{
 html{
 	font-size:16px;
 	font-family: 'Times New Roman', serif;
-	line-height:1;
+	line-height:1.3;
 	}
 
 main, footer, %headings{
 	text-align:center;
 	}
+a {text-decoration : none;}
 
-%headings{
-	text-transform: uppercase;
-}	
+	
 
 h1{
 	@extend %headings;
-	font-family: $serif;
-	font-size: fluidizeFont(30px);
+	font: $serif;
+	
 	&:after{
-		content:url(../img/design/scroll.png);
+		content:url(../img/design/long-scroll.svg);
 		display:block;
 		margin-top: fluidizeFont(5px);
+		width:400px;
+		margin:0 auto;
 	}
 }
 
 h2{
 	@extend %headings;
-	font-size: fluidizeFont(20px);
-	font-family: $sans-serif;
+	font: $serifDec;
 	&:before{
 		content:"";
 		width:100%;
-		border-top:2px solid $goldMed;
+		border-top:1px solid $goldMed;
 		display: inline-block;
 		top: 22px;
 		position: relative;
@@ -187,36 +414,114 @@ h2{
 		top: 0em;
 		margin:0 auto;
 		padding:5px;
+		opacity: 1 !important;
+
 		}
 
-	&:only-of-type span{
+	#drink & span{
 		background:url(../img/design/bg-white.png);
+		opacity: 1 !important;
+
+
 	}
 }
 
 h3{
 	@extend %headings;
-	font-family: $serif;
-	text-align:left;
+	font: $serifThin;
+	margin:0px;
+	text-transform:capitalize;
+
+	& + p{
+		margin:3px 0px;
+		font: $serifItalic;
+		line-height:1.4;
+	    letter-spacing:.5px;
+		
+	}
+	/*** use js to select first letter of each word ***/
+	/*span{
+		font-size:1.2em;
+	}*/
+
 }
+
+
+p + span {
+    display: block;
+    font-size: 0.85em;
+    margin-bottom:20px;
+    
+}
+
+h4{
+	@extend %headings;
+	font:$sansSerif;
+	margin-top:-20px;
+
+	span{
+		border-top: 2px dotted;
+    	display: inline-block;
+    	padding-top: 5px;
+    	width: 90px;
+	}
+}
+
+h5{
+	@extend %headings;
+	font:$sansSerif;
+	letter-spacing:1.5px;
+	margin-top:10px;
+}
+
+
+
+// 1st Menu
+
+#eat img:first-of-type{
+	width:84%;
+	margin:0 auto;
+}
+
+#eat div:nth-of-type(3){
+	border-left:2px dotted #000;
+}
+
+
+// Animations
+
+#philosophy h1, #philosophy p,
+#eat h1, #eat h2, #eat h2 span,  #eat div,
+#drink h1, #drink h2, #drink h2 span,  #drink div{
+	opacity:0;
+}
+
+h2 span{
+	opacity:1;
+}
+
+#trigger, #trigger1, #trigger2, #trigger3, #trigger4{
+	position:absolute;
+	top:-150px;
+	height:1px;
+	
+}
+
+#trigger{
+	top:250px;
+}
+
+
+
 
 
 @media only screen 
 and (max-width : 1440px) {
-nav {
-    height: 74px;
-    border-width:6px 0;
-    	h1{
-    		background-size:110px 110px;
-    		border-radius: 50%;
-    		height: 110px;
-    		width: 109px;
+nav.top {
+    height: 105px;
+    border-width:8px 0;
+    	
 	}
-	& a:before {
-		width:43px;
-		margin: -6px auto 0px;
-	}
-}
 }
 
 

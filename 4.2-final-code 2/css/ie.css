@@ -1,0 +1,8 @@
+/* Fix lack of support for dual background images in IE8 used in style.css */
+
+#wood {
+	background-color: #000;
+	background-image: url(../images/wood.jpg);
+	background-position: center top;
+	background-repeat: repeat-y;
+}
