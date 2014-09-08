@@ -53,32 +53,26 @@
 
 		</nav>
 
-<div id="my-slideshow">
-    <ul class="bjqs">
-    	<li><img src="img/gallery/rubicon-interior-2.jpg" alt="Rubicon Interior"></li>
-        <li><img src="img/gallery/cheese.jpg" alt="Cheese"></li>
-        <li><img src="img/gallery/rubicon-interior.jpg" alt="Rubicon Interior"></li>
-        <li><img src="img/gallery/cinnamon.jpg" alt="Cinnamon Cocktail"></li>
-        <li><img src="img/gallery/fig.jpg" alt="Fig"></li>
-        <li><img src="img/gallery/lemon.jpg" alt="Lemon Cocktail"></li>
-        <li><img src="img/gallery/peaches.jpg" alt="Peach Cocktail"></li>
-        <li><img src="img/gallery/rubicon-harrisburg-interior.jpg" alt="Rubicon Interior"></li>
-        <li><img src="img/gallery/rosemarry2.jpg" alt="Rosemarry Cocktail"></li>
-        <li><img src="img/gallery/rubicon-bar.jpg" alt="Rubicon Bar"></li>
-        <li><img src="img/gallery/rubicon-harrisburg-dining.jpg" alt="Rubicon Dining"></li>
-        <li><img src="img/gallery/rosemarry.jpg" alt="Rosemarry Cocktail"></li>
-        <li><img src="img/gallery/cheese2.jpg" alt="Cheese"></li>
-		<li><img src="img/gallery/rubicon-taps.jpg" alt="Rubicon Taps"></li>
-        <li><img src="img/gallery/rubicon-wine.jpg" alt="Rubicon Wine"></li>
-        <li><img src="img/gallery/rubicon.jpg" alt="Rubicon Restaurant"></li>
-        <li><img src="img/gallery/sausage.jpg" alt="Sausage"></li>
-        <li><img src="img/gallery/blueberry.jpg" alt="Blueberry Cocktail"></li>
-    
-    </ul>
-</div>
+	<section class="contact">
+			<div class="contact-form">
+				<h1>Private <span>Parties</span></h1>
+				<p>If you would like to host a private party, please contact us using the form below.</p>
+				<form method="post" action="mailer.php">
+						<input type="text" name="firstname" placeholder="First Name" required>
+						<input type="text" name="lastname" placeholder="Last Name" required>
+						<input type="email" name="email" placeholder="Email Address" required>
+						<input type="tel" name="phone" placeholder="Phone Number">
+						<textarea rows="10" name="message" placeholder="Message"></textarea>
+						<input type="submit" value="send">
+				</form>
+			</div>
+	</section>
 		
 	</header>
+
+
 	
+
 
 
 	
